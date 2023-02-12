@@ -1,7 +1,7 @@
 import streamlit as st
-import numpy as np
+#import numpy as np
 #import pandas as pd 
-import pickle
+#import pickle
 #import requests
 from PIL import Image
 # from keras.preprocessing.image import load_img
