@@ -1,6 +1,6 @@
 opencv_python==4.7.0.72
 streamlit==1.20.0
-tensorflow==2.10.0=mkl_py38ha5c4042_0
+tensorflow==2.10.0
 krb5==1.20.1=h6609f42_0
 tk==8.6.12=h8ffe710_0
 numpy==1.24.2=py38h7ec9225_0
