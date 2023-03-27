@@ -3,14 +3,14 @@ import streamlit as st
 import numpy as np
 from tensorflow import keras 
 import cv2 
-# import os
+import os
 
-# import subprocess
-# if not os.path.isfile('model1.h5'):
-#     subprocess.run(['curl --output model1.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Binary_RN50_TF_NO_ES_031823.h5"'], shell=True)
+import subprocess
+if not os.path.isfile('model1.h5'):
+    subprocess.run(['curl --output model1.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Binary_RN50_TF_NO_ES_031823.h5"'], shell=True)
 
 #Load models and compile
-binary_model = keras.models.load_model('Binary_RN50_TF_NO_ES_031823.h5',compile=False)
+binary_model = keras.models.load_model('model1.h5',compile=False)
 
 binary_model.compile(optimizer='adam',
                   loss='binary_crossentropy',
