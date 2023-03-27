@@ -6,20 +6,30 @@ import cv2
 import os
 import subprocess
 
+@st.cache(allow_output_mutation=True)
+def load_model(model_name):
+    image_classifier = keras.models.load_model(model_name,compile=False)
+    return (image_classifier)
+
 #Load models and compile
+
+#Binary model load and compile
 if not os.path.isfile('model1.h5'):
     subprocess.run(['curl --output model1.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Binary_RN50_TF_NO_ES_031823.h5"'], shell=True)
 
-binary_model = keras.models.load_model('model1.h5',compile=False)
+#cache function
+binary_model = load_model('model1.h5')
 
 binary_model.compile(optimizer='adam',
                   loss='binary_crossentropy',
                   metrics=['accuracy','AUC','Recall'])
 
+#Multiclass model load and compile
 if not os.path.isfile('model2.h5'):
     subprocess.run(['curl --output model2.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Multiclass_RN50_TF_NO_ES_031823.h5"'], shell=True)
 
-multiclass_model = keras.models.load_model('model2.h5',compile=False)
+#cache function
+multiclass_model = load_model('model2.h5')
 
 multiclass_model.compile(optimizer='adam',
                   loss='binary_crossentropy',
