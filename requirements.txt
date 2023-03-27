@@ -3,7 +3,6 @@ streamlit==1.20.0
 tensorflow==2.10.0
 tk==0.1.0
 numpy==1.24.2
-libsqlite==3.40.0
 multidict==6.0.4
 sqlite==3.41.1
 grpcio==1.42.0
