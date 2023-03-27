@@ -88,8 +88,6 @@ def multiclass_predict(img_array):
 #Display screen
 def main():
     #Description
-    #streamlit theme
-    st.set_page_config(page_title="Pneumonia Classifier",theme="night")
     st.title('Pneumonia Classifier')
     st.text('Provide a jpg/jpeg Chest X-Ray (CXR) image to predict if you have pneumonia (PNA).')
     st.text('The binary & multiclass ResNet-50 models have a 90 & 85% test accuracy respectively. This application has the potential to improve with more powerful models and serves only as a proof of concept.') 
