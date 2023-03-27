@@ -4,12 +4,12 @@ import numpy as np
 from tensorflow import keras 
 import cv2 
 import os
-
 import subprocess
+
+#Load models and compile
 if not os.path.isfile('model1.h5'):
     subprocess.run(['curl --output model1.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Binary_RN50_TF_NO_ES_031823.h5"'], shell=True)
 
-#Load models and compile
 binary_model = keras.models.load_model('model1.h5',compile=False)
 
 binary_model.compile(optimizer='adam',
@@ -19,7 +19,6 @@ binary_model.compile(optimizer='adam',
 if not os.path.isfile('model2.h5'):
     subprocess.run(['curl --output model2.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Multiclass_RN50_TF_NO_ES_031823.h5"'], shell=True)
 
-#multiclass_model = keras.models.load_model('Multiclass_RN50_TF_NO_ES_031823.h5',compile=False)
 multiclass_model = keras.models.load_model('model2.h5',compile=False)
 
 multiclass_model.compile(optimizer='adam',
@@ -91,8 +90,8 @@ def main():
     #Description
     st.title('Pneumonia Classifier')
     st.text('Provide a jpg/jpeg Chest X-Ray (CXR) image to predict if you have pneumonia (PNA).')
-    st.text('The binary & multiclass ResNet-50 models have a 90 & 85% test accuracy respectively.') 
-    st.text('WARNING: This application is LIMITED & is NOT a substitute for medical advice.')
+    st.text('The binary & multiclass ResNet-50 models have a 90 & 85% test accuracy respectively. This application has the potential to improve with more powerful models and serves only as a proof of concept.') 
+    st.text('WARNING: This application is LIMITED & is NOT a substitute for medical advice. There may be contradictory or incorrect results due to its training.')
     
     #Choose Classifier
     model_selection = ['binary - (Normal, PNA)','multi-class - (Bacterial PNA, Normal, Viral PNA)']
