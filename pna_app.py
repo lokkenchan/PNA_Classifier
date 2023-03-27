@@ -16,7 +16,12 @@ binary_model.compile(optimizer='adam',
                   loss='binary_crossentropy',
                   metrics=['accuracy','AUC','Recall'])
 
-multiclass_model = keras.models.load_model('Multiclass_RN50_TF_NO_ES_031823.h5',compile=False)
+if not os.path.isfile('model2.h5'):
+    subprocess.run(['curl --output model2.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Multiclass_RN50_TF_NO_ES_031823.h5"'], shell=True)
+
+#multiclass_model = keras.models.load_model('Multiclass_RN50_TF_NO_ES_031823.h5',compile=False)
+multiclass_model = keras.models.load_model('model2.h5',compile=False)
+
 multiclass_model.compile(optimizer='adam',
                   loss='binary_crossentropy',
                   metrics=['accuracy','AUC','Recall'])
