@@ -3,17 +3,9 @@ streamlit==1.20.0
 tensorflow==2.10.0
 tk==0.1.0
 numpy==1.24.2
-python==3.8.16
 keras==2.10.0
 tensorflow-estimator==2.10.0
-libpng==1.6.39
-brotlipy==0.7.0
-wrapt==1.15.0
-libprotobuf==3.20.2
-libxml2==2.10.3
 hdf5==1.14.0
-m2w64-libwinpthread-git==5.0.0.4634.697f757
-ucrt==10.0.22621.0
 tensorboard==2.10.0
 tensorflow-base==2.10.0
 openssl==1.1.1t
