@@ -6,6 +6,9 @@ import cv2
 import os
 import subprocess
 
+#streamlit theme
+st.set_page_config(theme="dark")
+
 #Load models and compile
 if not os.path.isfile('model1.h5'):
     subprocess.run(['curl --output model1.h5 "https://media.githubusercontent.com/media/lokkenchan/PNA_Classifier/main/Binary_RN50_TF_NO_ES_031823.h5"'], shell=True)
