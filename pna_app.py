@@ -7,7 +7,7 @@ import os
 import subprocess
 
 #streamlit theme
-st.set_page_config(theme="dark")
+st.set_page_config(page_title="PNA Classifier",theme="night")
 
 #Load models and compile
 if not os.path.isfile('model1.h5'):
